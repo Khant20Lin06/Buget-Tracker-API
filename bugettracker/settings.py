@@ -53,7 +53,7 @@ AUTH_USER_MODEL = "accounts.CustomUser"
 
 
 CORS_ALLOWED_ORIGINS = [
-
+    "https://budget-tracker-jet-pi.vercel.app",
     "http://localhost:3000",
     "http://127.0.0.1:3000",
 

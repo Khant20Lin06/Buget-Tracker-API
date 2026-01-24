@@ -26,7 +26,9 @@ SECRET_KEY = 'django-insecure-93!t0-rn3z_ni44difg!l)7o8u+u%bhxtf-xx(!l9knk1o#x8y
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "budget-tracker-jet-pi.vercel.app"
+]
 
 
 # Application definition
@@ -53,7 +55,7 @@ AUTH_USER_MODEL = "accounts.CustomUser"
 
 
 CORS_ALLOWED_ORIGINS = [
-    "https://budget-tracker-jet-pi.vercel.app",
+    "https://budget-tracker-jet-pi.vercel.app"
     "http://localhost:3000",
     "http://127.0.0.1:3000",
 

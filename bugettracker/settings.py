@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
-
+import os
 from datetime import timedelta
 from pathlib import Path
 
@@ -21,10 +21,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-93!t0-rn3z_ni44difg!l)7o8u+u%bhxtf-xx(!l9knk1o#x8y'
+SECRET_KEY = os.environ.get("SECRET_KEY",'django-insecure-93!t0-rn3z_ni44difg!l)7o8u+u%bhxtf-xx(!l9knk1o#x8y')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     "buget-tracker-api.vercel.app",
@@ -38,6 +38,11 @@ CSRF_TRUSTED_ORIGINS = [
     "https://budget-tracker-git-master-khant-lins-projects.vercel.app",
     "https://*.vercel.app",
 ]
+
+CORS_ALLOWED_ORIGIN_REGEXES = [
+    r"^https:\/\/.*\.vercel\.app$",
+]
+
 
 
 # Application definition
@@ -113,6 +118,7 @@ AUTHENTICATION_BACKENDS = (
 
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -121,7 +127,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     
-    'corsheaders.middleware.CorsMiddleware'
 ]
 
 ROOT_URLCONF = 'bugettracker.urls'

@@ -1,0 +1,8 @@
+{
+  "builds": [
+    { "src": "bugettracker/wsgi.py", "use": "@vercel/python" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "bugettracker/wsgi.py" }
+  ]
+}

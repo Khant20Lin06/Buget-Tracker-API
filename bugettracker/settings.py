@@ -27,7 +27,16 @@ SECRET_KEY = 'django-insecure-93!t0-rn3z_ni44difg!l)7o8u+u%bhxtf-xx(!l9knk1o#x8y
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "budget-tracker-jet-pi.vercel.app"
+    "buget-tracker-api.vercel.app",
+    ".vercel.app",
+    "localhost",
+    "127.0.0.1",
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://budget-tracker-jet-pi.vercel.app",
+    "https://budget-tracker-git-master-khant-lins-projects.vercel.app",
+    "https://*.vercel.app",
 ]
 
 
@@ -54,11 +63,12 @@ INSTALLED_APPS = [
 AUTH_USER_MODEL = "accounts.CustomUser"
 
 
+
 CORS_ALLOWED_ORIGINS = [
-    "https://budget-tracker-jet-pi.vercel.app"
+    "https://budget-tracker-jet-pi.vercel.app",
+    "https://budget-tracker-git-master-khant-lins-projects.vercel.app",  # သင့် actual frontend url
     "http://localhost:3000",
     "http://127.0.0.1:3000",
-
 ]
 
 CORS_ALLOW_CREDENTIALS = True

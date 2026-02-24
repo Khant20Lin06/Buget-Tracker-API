@@ -32,7 +32,7 @@ DEFAULT_ALLOWED_HOSTS = [
     ".onrender.com",
     "localhost",
     "127.0.0.1",
-    "https://buget-tracker-api.onrender.com",
+    "buget-tracker-api.onrender.com",
 ]
 ALLOWED_HOSTS = [
     host.strip()
@@ -69,7 +69,8 @@ INSTALLED_APPS = [
     "django_filters",
     'rest_framework_simplejwt',
     'rest_framework_simplejwt.token_blacklist',
-    'corsheaders'
+    'corsheaders',
+    'phonenumber_field',
 ]
 
 AUTH_USER_MODEL = "accounts.CustomUser"

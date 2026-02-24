@@ -32,6 +32,7 @@ DEFAULT_ALLOWED_HOSTS = [
     ".onrender.com",
     "localhost",
     "127.0.0.1",
+    "https://buget-tracker-api.onrender.com",
 ]
 ALLOWED_HOSTS = [
     host.strip()
@@ -41,12 +42,12 @@ ALLOWED_HOSTS = [
 
 CSRF_TRUSTED_ORIGINS = [
     "https://budget-tracker-jet-pi.vercel.app",
-    "https://budget-tracker-git-master-khant-lins-projects.vercel.app",
+    "https://buget-tracker-api.onrender.com",
     "https://*.vercel.app",
 ]
 
 CORS_ALLOWED_ORIGIN_REGEXES = [
-    r"^https:\/\/.*\.vercel\.app$",
+    "https://buget-tracker-api.onrender.com",
 ]
 
 
@@ -77,7 +78,7 @@ AUTH_USER_MODEL = "accounts.CustomUser"
 
 CORS_ALLOWED_ORIGINS = [
     "https://budget-tracker-jet-pi.vercel.app",
-    "https://budget-tracker-git-master-khant-lins-projects.vercel.app",  # သင့် actual frontend url
+    "https://buget-tracker-api.onrender.com",  
     "http://localhost:3000",
     "http://127.0.0.1:3000",
 ]

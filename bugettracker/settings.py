@@ -26,11 +26,17 @@ SECRET_KEY = os.environ.get("SECRET_KEY", "django-insecure-93!t0-rn3z_ni44difg!l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [
+DEFAULT_ALLOWED_HOSTS = [
     "buget-tracker-api.vercel.app",
     ".vercel.app",
+    ".onrender.com",
     "localhost",
     "127.0.0.1",
+]
+ALLOWED_HOSTS = [
+    host.strip()
+    for host in os.getenv("ALLOWED_HOSTS", ",".join(DEFAULT_ALLOWED_HOSTS)).split(",")
+    if host.strip()
 ]
 
 CSRF_TRUSTED_ORIGINS = [
